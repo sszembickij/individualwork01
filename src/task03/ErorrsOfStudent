@@ -1,0 +1,108 @@
+    // 1
+    // List mNamesList
+        mNamesList.removeAll(mNamesList);
+//  !!!!  Необходимо применять  mNamesList.clear();
+
+///////////////////////////////////////////////////////////
+    // 2
+        if (editCar != null || editCar.getVehicleId() < 0) {
+        itemMenuDelete.setVisible(true);
+    }
+//  !!!!  Условие editCar.getVehicleId() < 0  никогда не будет проверятся;
+
+///////////////////////////////////////////////////////////
+    // 3
+    String imagePath = oldImages.get(i).toString();
+        imagePath.replace("\\/", "/");
+        if (mOutterListFirst.contains(imagePath)) {
+        mOutterListFirst.remove(imagePath);
+    }
+//  !!!!  mOutterListFirst.remove(imagePath) - блок IF тут не нужен
+//  !!!!  так же возможно что то с экранами, я ХЗ
+
+
+///////////////////////////////////////////////////////////
+    // 4
+        if (spinnerStat != null) {
+        spinnerStat.setBackgroundResource(R.drawable.bg_spinner);
+    } else {
+        spinnerStat.setBackgroundResource(R.drawable.bg_spinner_error);
+    }
+//  !!!!  если spinnerStat == null, в блоке else невозможно будет обратиться к методу объекта
+
+
+ ///////////////////////////////////////////////////////////
+   // 5
+        for (BluetoothDevice device : pairedDevices) {
+        if (device.getAddress().equalsIgnoreCase(remoteDevice)) {
+            startCommandsLoading();
+        }
+        break;
+    }
+//  !!!!  из-за break цикл выполнится один раз
+//  !!!!  метод startCommandsLoading() не привязан к объекту (ХЗ)
+
+
+///////////////////////////////////////////////////////////
+    // 6
+    public void setFacilitateCode (String code){
+        code = code;
+    }
+//  !!!!  необходимо this.code = code;
+
+
+///////////////////////////////////////////////////////////
+    // 7
+    public int getTongue () {
+        return tongue = tongue;
+    }
+
+    public int getTires () {
+        return tires = tires;
+    }
+
+    public int getTank_type () {
+        return tank_type = tank_type;
+    }
+
+    public int getSuspension () {
+        return suspension = suspension;
+    }
+//  !!!! в return вместо param = param; просто param;
+
+
+///////////////////////////////////////////////////////////
+    // 8
+        if (itemIdForTitle.equalsIgnoreCase("Left Rocker Panel")) {
+        itemIdForTitle = "Right Rocker Panel";
+    } else if (itemIdForTitle.equalsIgnoreCase("Left Rocker Panel")) {
+        itemIdForTitle = "Left Front Rocker Panel";
+    }
+//  !!!! условие второго IF полностью совпадает с первым, и в данной конструкции никогда не выполниться
+
+///////////////////////////////////////////////////////////
+    // 9
+    public static String getWebStyleName (String name) {
+        switch (name) {
+            case "left_bed_side":
+                name = "Left Bed Side";
+                break;
+
+            case "Left Bed Side":
+                name = "Left Bed Side";
+                break;
+
+            case "left_bed_side":
+                name = "Left Bed Side";
+                break;
+
+            default:
+                name = name.replaceAll("_", " ");
+                name = StringUtils.capitalizeFully(name);
+        }
+    }
+//первый и третий кейс повторяются, второй ничего не делает, и вообще, switch тут не нужен:
+    public static String getWebStyleName (String name) {
+                name = name.replaceAll("_", " ");
+                name = StringUtils.capitalizeFully(name);
+    }

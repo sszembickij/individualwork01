@@ -4,7 +4,7 @@ public class Student {
     private String name;
     private Group group;
 
-    public Student(String name) {
+    Student(String name) {
         this.name = name;
     }
 
@@ -13,11 +13,11 @@ public class Student {
         this.group = group;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public void setGroup(Group group) {
+    void setGroup(Group group) {
         if (this.group != null) {
             this.group.removeStudent(this);
         }
@@ -27,7 +27,7 @@ public class Student {
         }
     }
 
-    public void setGroupByGroup(Group group) {
+    void setGroupByGroup(Group group) {
         this.group = group;
     }
 

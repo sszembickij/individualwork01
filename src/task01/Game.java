@@ -2,17 +2,17 @@ package task01;
 
 import java.util.Random;
 
-public class Game {
-    int numberPointFirst = 3;
-    int numberPointSecond = 4;
-    int countMoves = 0;
-    static Random random = new Random();
-    static int[][] neighboringPoints = {{3}, {3, 4}, {4}, {0, 1, 5, 6}, {1, 2, 6, 7}, {3}, {3, 4}, {4}};
+class Game {
+    private int numberPointFirst = 3;
+    private int numberPointSecond = 4;
+    private int countMoves = 0;
+    private static Random random = new Random();
+    private static int[][] neighboringPoints = {{3}, {3, 4}, {4}, {0, 1, 5, 6}, {1, 2, 6, 7}, {3}, {3, 4}, {4}};
 
-    public Game() {
+    Game() {
     }
 
-    public void start() {
+    void start() {
         while (numberPointFirst != numberPointSecond) {
             numberPointFirst = neighboringPoints[numberPointFirst]
                     [random.nextInt(neighboringPoints[numberPointFirst].length)];
@@ -22,7 +22,7 @@ public class Game {
         }
     }
 
-    public int getCountMoves(){
+    int getCountMoves(){
         return countMoves;
     }
 }

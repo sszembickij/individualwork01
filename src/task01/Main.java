@@ -18,7 +18,7 @@ import java.util.List;
 public class Main {
 
     private static final int ITERATIONS = 1000000;
-    static List<int[]> results = new ArrayList<>();
+    private static List<int[]> results = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -29,8 +29,8 @@ public class Main {
         }
 
         System.out.println("Вероятность закончить игру на n-ом ходу:");
-        for (int i = 0; i < results.size(); i++) {
-            System.out.printf("%s - %s\n", results.get(i)[0], (double) results.get(i)[1] / ITERATIONS);
+        for (int[] result : results) {
+            System.out.printf("%s - %s\n", result[0], (double) result[1] / ITERATIONS);
         }
     }
 

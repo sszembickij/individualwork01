@@ -12,8 +12,12 @@ import java.util.*;
 
 
 public class Main {
-    private static final String URL_REGEX =
-            "^(http:\\/\\/|https:\\/\\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?$";
+    private static final String URL_REGEX;
+
+    static {
+        URL_REGEX = "^(http:/\\/|https:\\/\\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?$";
+    }
+
     private static Map<String, Integer> domenList = new HashMap<>();
 
     public static void main(String[] args) {

@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    private static final int[] CIRCLE_CENTER = {1, 1};
+    private static final int[] CIRCLE_CENTER = {2, 2};
     private static final int RADIUS = 2;
     private static List<int[]> internalPoints = new ArrayList<>();
 
